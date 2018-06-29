@@ -1,0 +1,32 @@
+<h1 class="text-center">Shops</h1>
+<table class="table">
+  <tbody>
+  {{#each model as |shop|}}
+    <tr>
+      {{#if (eq showEditInput shop.id)}}
+        <th scope="row">
+          {{input class="form-control" value=shop.name placeholder="Shop Name"}}
+        </th>
+        <td>
+          <span class="float-right">
+            <button class="btn btn-success" {{action 'updateShop' shop}}>Save</button>
+          </span>
+        </td>
+      {{else}}
+        <th scope="row">{{#link-to 'shop' shop.id}}{{shop.name}}{{/link-to}}</th>
+        <td>
+        <span class="float-right">
+          <button class="btn btn-success" {{action 'editShop' shop.id}}>Edit</button>
+          <button class="btn btn-danger" {{action 'destroyShop' shop.id}}>Delete</button>
+        </span>
+        </td>
+      {{/if}}
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<div>
+  {{input value=newShop placeholder="shop name"}}
+  <button {{action 'createShop'}}>Create</button>
+</div>

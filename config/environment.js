@@ -4,6 +4,12 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'shopify',
     environment,
+    firebase: {
+      apiKey: "AIzaSyBwh07I4V8mUzcae0Q3WmjkxGXp2iauw7c",
+      authDomain: "ember-project-4ca62.firebaseapp.com",
+      databaseURL: "https://ember-project-4ca62.firebaseio.com",
+      storageBucket: "ember-project-4ca62.appspot.com"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

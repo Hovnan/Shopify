@@ -1,0 +1,13 @@
+<h1>{{model.name}}</h1>
+<h1>{{model.products}}</h1>
+{{#each model.products as |product|}}
+  <p>{{product.name}}</p>
+{{/each}}
+{{#if showInputs}}
+  {{input value=productName placeholder="Product Name"}}
+  {{input value=productQuantity placeholder="Product Quantity"}}
+  {{input value=productPrice placeholder="Product Price"}}
+  <button {{action 'saveShopProduct'}}>Save</button>
+{{else}}
+  <button {{action 'createShopProduct'}}>Create Product</button>
+{{/if}}

@@ -1,0 +1,21 @@
+<h1 class="text-center">Shops</h1>
+<table class="table">
+  <tbody>
+  {{#each shops as |shop|}}
+    <tr>
+      <th scope="row">{{#link-to 'shops.show' shop.id}}{{shop.name}}{{/link-to}}</th>
+      <td>
+        <span class="float-right">
+          <button class="btn btn-success" {{action 'updateShop' shop.id}}>Edit</button>
+          <button class="btn btn-danger" {{action 'destroyShop' shop.id}}>Delete</button>
+        </span>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<div>
+  {{input value=newShop placeholder="shop name"}}
+  <button {{action 'createShop'}}>Create</button>
+</div>
